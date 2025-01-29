@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <link rel="stylesheet" href="../CSS/booking.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/Homepage.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/themify-icons.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../JS/animations.js"></script>    
+    <script src="https://kit.fontawesome.com/bec9b21f43.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width" , intial-scale="1">
+</head> 
+<body>
+    <div id="logo">
+        <a href="Homepage.html">
+            <img src="../Images/logo.png" height="100%" width="100%">
+        </a>
+    </div>
+    
+    <header class="head">
+        <div>
+            <nav>
+                <ul id="navigation">
+                    <li><a href="Homepage.html">Home</a></li>
+                    <li><a class="active" href="Airlineinfo.html">About</a></li>
+                    <li><a href="Booking.html">Book</a></li>
+                    <li><a href="help.html">Contact & Support</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<body>
+    <div class="container">
+        <h1>Booking Confirmation</h1>
+        <p>Your payment has been processed successfully!</p>
+        <p>Thank you for booking with us.</p>
+        <p>Your booking details:</p>
+        <div id="confirmation-details"></div>
+        <a href="homepage.html" class="back-btn">Back to Homepage</a>
+    </div>
+
+    <script>
+        // Display confirmation details (this can be enhanced to pull from a database)
+        document.addEventListener('DOMContentLoaded', function () {
+            const flightNumber = new URLSearchParams(window.location.search).get('flightNumber');
+            const totalAmount = new URLSearchParams(window.location.search).get('amount');
+            const passengers = new URLSearchParams(window.location.search).get('passengers');
+
+            const confirmationDetailsDiv = document.getElementById('confirmation-details');
+            confirmationDetailsDiv.innerHTML = `
+                <p>Flight Number: ${flightNumber}</p>
+                <p>Total Amount: $${totalAmount}</p>
+                <p>Number of Passengers: ${passengers}</p>
+            `;
+        });
+    </script>
+    <footer class="footer" id="footer">
+        <div class="dd1">
+            <div class="dd1">
+                <div class="dd1">
+                    <div class="dd1">
+                        <div class="footer_widget">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <img data-cfsrc="img/footer_logo.png" alt="LOGO" style="display:none;visibility:hidden;">
+                                </a>
+                            </div>
+                            
+                            <div class="socail_links">
+                                <ul>
+                                    <li><a href="#"><i class="ti-facebook"></i></a></li>
+                                    <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cc1">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">Company</h3>
+                            <ul class="links">
+                                <li><a href="#">Pricing</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cc2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">Popular destination</h3>
+                            <ul class="places">
+                                <li><a href="#">Delhi</a></li>
+                                <li><a href="#">Bombay</a></li>
+                                <li><a href="#">Goa</a></li>
+                                <li><a href="#">Pune</a></li>
+                                <li><a href="#">Jammu & Kashmir</a></li>
+                                <li><a href="#">Hyderabad</a></li>
+                                <li><a href="#">Banglore</a></li>
+                                <li><a href="#">Kolkata</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </footer>
+</body>
+
+</html>

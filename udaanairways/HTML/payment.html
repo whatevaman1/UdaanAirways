@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="../CSS/flight-options.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">Payment Details</h1>
+        <form onsubmit="confirmBooking(event)">
+            <div class="form-group">
+                <label for="name">Name on Card:</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="expiryDate">Expiry Date:</label>
+                <input type="text" id="expiryDate" placeholder="MM/YY" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" required>
+            </div>
+            <button type="submit" class="pay-btn">Pay Now</button>
+        </form>
+    </div>
+</body>
+<script>
+    // function confirmBooking(event) {
+    //     event.preventDefault(); // Prevent the form from submitting normally
+    //     // Open a new window with the confirmation message
+    //     const confirmationWindow = window.open("", "Confirmation", "width=400,height=200");
+    //     confirmationWindow.document.write("<h1>Your Flight Has Been Booked!</h1>");
+    //     confirmationWindow.document.write("<p>Thank you for your payment.</p>");
+    //     confirmationWindow.document.write("<button onclick='window.close()'>Close</button>");
+    //     confirmationWindow.document.close(); // Close the document to render it
+    //}
+function proceedToPayment(price, passengers) {
+    const totalAmount = price * passengers;
+    const flightNumber = "AA123"; // Example flight number; this should be dynamic based on user selection
+
+    // Redirect to payment.html with parameters
+    window.location.href = `payment.html?amount=${totalAmount}&flightNumber=${flightNumber}&passengers=${passengers}`;
+}
+</script>
+</html>

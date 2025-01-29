@@ -1,0 +1,65 @@
+/* checkout.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+.order-summary, .payment-info {
+    margin-bottom: 20px;
+}
+
+.order-summary h2, .payment-info h2 {
+    margin-top: 0;
+}
+
+button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Additional styles for form inputs */
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}

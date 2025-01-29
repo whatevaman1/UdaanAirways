@@ -1,0 +1,198 @@
+
+body {
+    color: #010610;
+    width: 100%;
+    font-family: sans-serif;
+    background-color: #970747;
+}
+
+#main-body {
+    padding: 1.5%;
+    width: 60vw;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+}
+.caption {
+    position: absolute;
+    top: 20px; /* Move to the top */
+    right: 20px; /* Align to the right */
+    color: white; /* Adjust this color based on your background */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds a shadow for better readability */
+}
+
+.caption h1 {
+    font-size: 2.5rem; /* Adjust font size as needed */
+    margin: 0;
+}
+
+.caption p {
+    font-size: 1.2rem; /* Adjust font size as needed */
+    margin: 10px 0;
+}
+
+.btn {
+    margin-top: 10px;
+}
+
+#main-slider {
+    height: 400px; /* Set the height of the slider */
+    overflow: hidden; /* Prevent overflow of content */
+    position: relative; /* Positioning context for absolute children */
+}
+
+.slide {
+    width: 100%; /* Full width of the slider */
+    height: 100%; /* Full height of the slider */
+    background-size: cover; /* Fill the slider while maintaining aspect ratio */
+    background-position: center; /* Center the background image */
+    position: absolute; /* Position each slide absolutely within the slider */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for slides */
+}
+
+.slide.active {
+    opacity: 1; /* Show the active slide */
+}
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 0, 153, 0.271); /* Changed to transparent */
+    color: white;
+    border: none;
+    height: 60px;
+    width: 100px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 25px;
+}
+#prev-slide {
+    left: 10px; /* Position for the previous slide button */
+}
+
+#next-slide {
+    right: 10px; /* Position for the next slide button */
+}
+
+/* Search button styling */
+#search {
+    height: 8vh; /* Adjust height as needed */
+    width: 15vw; /* Adjust width as needed */
+    border-radius: 10px;
+    font-size: 2.2vh; /* Font size */
+    letter-spacing: 0.1vw; /* Letter spacing */
+    position: absolute; /* Keep it absolutely positioned within the slider */
+    align-self: center;
+    background-color: rgba(255, 0, 153, 0.7);
+    left:41%;
+    top: 50%; /* Adjust vertical positioning */
+    box-shadow: 0px 0px 4px 2px #1310408a; /* Shadow effect */
+    font-weight: 400;
+    z-index: 10; /* Ensure it's above other elements */
+}
+
+#search a {
+    text-decoration: none; /* Remove underline from links */
+    color: white; /* Link color */
+}
+
+#search:hover {
+    transform: scale(1.02); /* Scale effect on hover */
+}
+
+/* Content section */
+#content {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 7vh; /* Spacing from the top */
+}
+
+/* Top offer section */
+#top-offer {
+    background-color: rgba(255, 174, 228, 0.8); /* Background color */
+    height: 70vh; /* Set height */
+    width: 60%; /* Set width */
+    border-radius: 2%; /* Rounded corners */
+    margin: 10px; /* Margin */
+    padding: 8px; /* Padding */
+    border: 5px solid black; /* Border */
+}
+
+#top-offer h2 {
+    text-align: center; /* Center the heading */
+}
+
+.one {
+    font-weight: 600; /* Font weight */
+    margin-right: 35px; /* Margin on the right */
+    float: right; /* Align to the right */
+}
+
+.two {
+    color: #010610; /* Text color */
+}
+
+.three {
+    margin-left: 20px; /* Margin on the left */
+}
+
+/* Airline info section */
+#airline-info {
+    height: 70vh; /* Set height */
+    background-color: rgba(255, 174, 228, 0.8); /* Background color */
+    width: 60%; /* Set width */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: space-between; /* Space out items */
+    align-items: center; /* Center align items */
+    border-radius: 2%; /* Rounded corners */
+    margin: 10px; /* Margin */
+    padding: 8px; /* Padding */
+    border: 5px solid black; /* Border */
+}
+
+#about-image1 {
+    height: 40%; /* Set height for the image section */
+    width: 80%; /* Set width */
+    display: flex;
+    flex-direction: row; /* Align images in a row */
+    justify-content: space-between; /* Space out images */
+}
+
+.infoimage {
+    height: 90%; /* Image height */
+    width: 50%; /* Image width */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.infoimage:hover {
+    opacity: 0.6; /* Reduce opacity on hover */
+    transform: scale(1.05); /* Scale effect on hover */
+    transition: all 0.5s ease; /* Smooth transition for both opacity and scale */
+}
+
+.infoimage img {
+    box-shadow: 1px 1px 4px 4px #0b0b3c87; /* Image shadow */
+    width: 100%; /* Make sure image fills its container */
+    height: 100%; /* Make sure image fills its container */
+    object-fit: cover; /* Cover the container without distortion */
+}
+
+#about-info {
+    line-height: 2.3vh; /* Line height */
+    letter-spacing: 1px; /* Letter spacing */
+    font-size: 2.1vh; /* Font size */
+    height: 40%; /* Set height */
+    width: 80%; /* Set width */
+}
+

@@ -1,0 +1,36 @@
+body {
+    background-color:rgba(255, 174, 228, 0.8);
+   }
+   p{
+    width:150px;
+    border-radius:20px;
+    padding:10px;
+    background-size:cover;
+   }
+   p:hover{
+   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+   }
+   p:active {
+     background-color:#27537cbf;
+     box-shadow: 0 5px #666;
+     transform: translateY(4px);
+   }
+   .img {
+    width:180px;
+    height:200px;
+   }
+   
+   a:link
+   {
+    color: darkcyan;
+   }
+   a:visited
+   {
+    color: rgb(18, 34, 34);
+    
+   }
+   a:hover
+   {
+    color:black;
+   }
+   

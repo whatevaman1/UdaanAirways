@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Food Menu</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/Homepage.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/food-menu.css">
+    <link rel="stylesheet" href="../CSS/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/themify-icons.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../JS/animations.js"></script>    
+    <script src="https://kit.fontawesome.com/bec9b21f43.js" crossorigin="anonymous"></script>
+</head> 
+<body>
+    <div class="container">
+        <header>
+            <h1>Flight Food Menu</h1>
+            <p>Please select your meal and beverage options for the flight.</p>
+        </header>
+
+        <section class="menu-section">
+            <h2>Meals</h2>
+            <div class="menu-item">
+                <h3>Chicken Pasta</h3>
+                <p>A delicious pasta dish with grilled chicken and a creamy sauce.</p>
+                <button onclick="addToOrder('Chicken Pasta')">Add to Order</button>
+            </div>
+            <div class="menu-item">
+                <h3>Vegetarian Salad</h3>
+                <p>A fresh salad with seasonal vegetables and a light vinaigrette.</p>
+                <button onclick="addToOrder('Vegetarian Salad')">Add to Order</button>
+            </div>
+            <div class="menu-item">
+                <h3>Beef Stir Fry</h3>
+                <p>Tender beef strips stir-fried with vegetables and served with rice.</p>
+                <button onclick="addToOrder('Beef Stir Fry')">Add to Order</button>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h2>Drinks</h2>
+            <div class="menu-item">
+                <h3>Orange Juice</h3>
+                <p>Freshly squeezed orange juice.</p>
+                <button onclick="addToOrder('Orange Juice')">Add to Order</button>
+            </div>
+            <div class="menu-item">
+                <h3>Coffee</h3>
+                <p>Hot brewed coffee with options for cream and sugar.</p>
+                <button onclick="addToOrder('Coffee')">Add to Order</button>
+            </div>
+            <div class="menu-item">
+                <h3>Red Wine</h3>
+                <p>A glass of fine red wine.</p>
+                <button onclick="addToOrder('Red Wine')">Add to Order</button>
+            </div>
+        </section>
+
+        <section class="order-summary">
+            <h2>Your Order</h2>
+            <ul id="order-list">
+                <!-- Order items will be added here -->
+            </ul>
+            <button onclick="proceedToCheckout()" class="checkout-btn">Proceed to Checkout</button>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Udaan Airways Food Service. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const orderList = [];
+        function addToOrder(item) {
+    orderList.push(item);
+    localStorage.setItem('foodOrder', JSON.stringify(orderList)); // Store in localStorage
+    updateOrderList();
+}
+        function updateOrderList() {
+            const orderListElement = document.getElementById('order-list');
+            orderListElement.innerHTML = '';
+            orderList.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                orderListElement.appendChild(li);
+            });
+        }
+
+        function proceedToCheckout() {
+            if (orderList.length === 0) {
+                alert("Please add items to your order before proceeding to checkout.");
+            } else {
+                // Redirect to the checkout page (you can create checkout.html)
+                window.location.href = "checkout.html";
+            }
+        }
+        
+    </script>
+</body>
+</html>

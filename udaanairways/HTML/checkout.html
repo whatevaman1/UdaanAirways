@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="../CSS/travel.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/Homepage.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/themify-icons.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../JS/animations.js"></script>    
+    <script src="https://kit.fontawesome.com/bec9b21f43.js" crossorigin="anonymous"></script>
+</head> 
+<body>
+    <div class="container">
+        <header>
+            <h1>Checkout</h1>
+            <p>Please review your order and enter your payment information.</p>
+        </header>
+
+        <section class="order-summary">
+            <h2>Your Order</h2>
+            <ul id="order-list">
+                <!-- Order items will be populated here -->
+            </ul>
+            <p>Total Amount: <span id="total-amount">$0</span></p>
+        </section>
+
+        <section class="payment-info">
+            <h2>Payment Information</h2>
+            <form id="payment-form" onsubmit="event.preventDefault(); processPayment();">
+                <div class="form-group">
+                    <label for="card-number">Card Number:</label>
+                    <input type="text" id="card-number" placeholder="Enter your card number" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiry-date">Expiry Date:</label>
+                    <input type="text" id="expiry-date" placeholder="MM/YY" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" placeholder="Enter CVV" required>
+                </div>
+                <button type="submit" class="pay-btn">Pay Now</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Udaan Airways Food Service. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Dummy order data for demonstration
+        const orderList = JSON.parse(localStorage.getItem('foodOrder')) || [];
+        const totalAmount = orderList.length * 10; // Assuming each item costs $10
+
+        function displayOrder() {
+            const orderListElement = document.getElementById('order-list');
+            orderListElement.innerHTML = '';
+            orderList.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                orderListElement.appendChild(li);
+            });
+            document.getElementById('total-amount').textContent = `$${totalAmount}`;
+        }
+
+        function processPayment() {
+            if (validateCardDetails()) {
+                alert("Payment processed successfully! Thank you for your order.");
+                // Here you would typically handle the payment processing with a payment gateway.
+                // For demonstration, we'll clear the order and redirect to a confirmation page.
+                localStorage.removeItem('foodOrder'); // Clear the stored order
+                window.location.href = "confirmation.html"; // Redirect to a confirmation page
+            }
+        }
+
+        function validateCardDetails() {
+            const cardNumber = document.getElementById('card-number').value;
+            const expiryDate = document.getElementById('expiry-date').value;
+            const cvv = document.getElementById('cvv').value;
+
+            const cardNumberPattern = /^\d{16}$/; // Simple pattern for 16-digit card numbers
+            const expiryDatePattern = /^(0[1-9]|1[0-2])\/\d{2}$/; // MM/YY format
+            const cvvPattern = /^\d{3}$/; // 3-digit CVV
+
+            if (!cardNumberPattern.test(cardNumber)) {
+                alert("Please enter a valid 16-digit card number.");
+                return false;
+            }
+            if (!expiryDatePattern.test(expiryDate)) {
+                alert("Please enter a valid expiry date in MM/YY format.");
+                return false;
+            }
+            if (!cvvPattern.test(cvv)) {
+                alert("Please enter a valid 3-digit CVV.");
+                return false;
+            }
+            return true;
+        }
+
+        // Call displayOrder on page load
+        document.addEventListener('DOMContentLoaded', displayOrder);
+    </script>
+</body>
+
+</html>

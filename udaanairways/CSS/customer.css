@@ -1,0 +1,98 @@
+/* Contact Us Page Styling */
+
+body {
+    color: #010610;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #970747, #ff6f61); /* Gradient background */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items at the start */
+    padding-top: 50px; /* Add padding to the top */
+}
+
+#contact-container {
+    width: 90vw; /* Adjusted width for better responsiveness */
+    max-width: 600px; /* Set a maximum width */
+    margin: auto;
+    padding: 2rem; /* Increased padding for better spacing */
+    background-color: rgba(46, 47, 80, 0.9); /* Slightly transparent background */
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7); /* Enhanced shadow */
+    border: 5px solid #ffffff; /* White border for contrast */
+    color: #ffffff;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #ffcc00; /* Changed heading color */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    margin-bottom: 1.5rem; /* Added margin below heading */
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: stretch; /* Stretch items to fill the container */
+    padding-top: 1rem; /* Added top padding */
+}
+
+label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem; /* Added margin above labels */
+    display: block; /* Ensure labels are block elements */
+}
+
+input[type="text"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 12px; /* Increased padding for comfort */
+    border-radius: 5px;
+    border: 1px solid #333;
+    font-size: 1.1rem;
+    background-color: #ffffff; /* Changed input background to white for better readability */
+    color: #010610;
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+    border-color: #ff6f61; /* Focus border color */
+    box-shadow: 0px 0px 5px rgba(255, 0, 153, 0.7);
+}
+
+textarea {
+    height: 120px;
+}
+
+button[type="submit"] {
+    background-color: #ff6f61; /* Updated button color */
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform .3s ease, box-shadow .3s ease, background-color .3s ease; /* Added background color transition */
+    margin-top: 1.5rem; /* Added margin above button */
+}
+
+button[type="submit"]:hover {
+    transform: scale(1.05);
+    background-color: #ffcc00; /* Change button color on hover */
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: #333333; /* Darker footer for contrast */
+    color: #ffffff;
+    position: relative; /* Positioning for footer */
+    bottom: 0; /* Stick to bottom */
+    width: 100%; /* Full width */
+}

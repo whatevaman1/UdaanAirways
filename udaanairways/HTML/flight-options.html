@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../CSS/Homepage.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/flight-options.css">
+    <link rel="stylesheet" href="../CSS/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/themify-icons.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../JS/animations.js"></script>    
+    <script src="https://kit.fontawesome.com/bec9b21f43.js" crossorigin="anonymous"></script>
+    </head> 
+    <body>
+        <div id="logo">
+            <a href="Homepage.html">
+                <img src="../Images/logo.png" height="100%" width="100%">
+            </a>
+        </div>
+        <header class="head">
+            <div>
+                <nav>
+                    <ul id="navigation">
+                        <li><a href="Homepage.html">Home</a></li>
+                        <li><a class="active" href="Airlineinfo.html">About</a></li>
+                        <li><a href="Booking.html">Book</a></li>
+                        <li><a href="help.html">Contact & Support</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Options</title>
+    <link rel="stylesheet" href="../CSS/travel.css">
+    <script>
+        function showAvailableFlights() {
+            const departure = document.getElementById("departure").value;
+            const arrival = document.getElementById("arrival").value;
+            const date = document.getElementById("date").value;
+            const passengers = document.getElementById("passengers").value;
+    
+            // Simulated flight options for Indian routes
+            const flights = [
+                { flightNumber: "IN101", departureTime: "9:00 AM", arrivalTime: "11:30 AM", price: 5000 },
+                { flightNumber: "IN202", departureTime: "2:00 PM", arrivalTime: "4:30 PM", price: 6200 },
+                { flightNumber: "IN303", departureTime: "6:00 PM", arrivalTime: "8:30 PM", price: 5700 }
+            ];
+    
+            const flightOptionsDiv = document.getElementById("flight-options");
+            flightOptionsDiv.innerHTML = ""; // Clear previous options
+    
+            // Display available flights
+            flights.forEach(flight => {
+                flightOptionsDiv.innerHTML += `
+                    <div class="flight-option">
+                        <h3>Flight Number: ${flight.flightNumber}</h3>
+                        <p>Departure: ${departure} at ${flight.departureTime}</p>
+                        <p>Arrival: ${arrival} at ${flight.arrivalTime}</p>
+                        <p>Price: ₹${flight.price} per passenger</p>
+                        <button onclick="proceedToPayment(${flight.price}, ${passengers})">Select</button>
+                    </div>
+                `;
+            });
+        }
+    
+        function proceedToPayment(price, passengers) {
+            const totalAmount = price * passengers;
+            const confirmationWindow = window.open("", "Confirmation", "width=400,height=200");
+            confirmationWindow.document.write("<h1>Your Flight Has Been Booked!</h1>");
+            confirmationWindow.document.write(`<p>Total Amount: ₹${totalAmount}</p>`);
+            confirmationWindow.document.write("<p>Thank you for your payment.</p>");
+            confirmationWindow.document.write("<button onclick='window.close(); window.opener.location.href=\"Homepage.html\";'>Close</button>");
+            confirmationWindow.document.close();
+        }
+    </script>    
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">Select Your Flight Options</h1>
+        <form id="flight-options-form" onsubmit="event.preventDefault(); showAvailableFlights();">
+            <div class="form-group">
+                <label for="departure">Departure Location:</label>
+                <input type="text" id="departure" placeholder="Enter Departure Location" required>
+            </div>
+            <div class="form-group">
+                <label for="arrival">Arrival Location:</label>
+                <input type="text" id="arrival" placeholder="Enter Arrival Location" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Flight Date:</label>
+                <input type="date" id="date" required>
+            </div>
+            <div class="form-group">
+                <label for="passengers">Number of Passengers:</label>
+                <input type="number" id="passengers" min="1" value="1" required>
+            </div>
+            <button type="submit" class="pay-btn">Show Available Flights</button>
+        </form>
+
+        <div id="flight-options" class="flight-options"></div>
+    </div>
+    <footer class="footer" id="footer">
+        <div class="dd1">
+            <div class="dd1">
+                <div class="dd1">
+                    <div class="dd1">
+                        <div class="footer_widget">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <img data-cfsrc="img/footer_logo.png" alt="LOGO" style="display:none;visibility:hidden;">
+                                </a>
+                            </div>
+                            
+                            <div class="socail_links">
+                                <ul>
+                                    <li><a href="#"><i class="ti-facebook"></i></a></li>
+                                    <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cc1">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">Company</h3>
+                            <ul class="links">
+                                <li><a href="#">Pricing</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cc2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">Popular destination</h3>
+                            <ul class="places">
+                                <li><a href="#">Delhi</a></li>
+                                <li><a href="#">Bombay</a></li>
+                                <li><a href="#">Goa</a></li>
+                                <li><a href="#">Pune</a></li>
+                                <li><a href="#">Jammu & Kashmir</a></li>
+                                <li><a href="#">Hyderabad</a></li>
+                                <li><a href="#">Banglore</a></li>
+                                <li><a href="#">Kolkata</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </footer>
+</body>
+</html>

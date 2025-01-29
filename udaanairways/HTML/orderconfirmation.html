@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="../CSS/travel.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/Homepage.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/themify-icons.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../JS/animations.js"></script>    
+    <script src="https://kit.fontawesome.com/bec9b21f43.js" crossorigin="anonymous"></script>
+</head> 
+<body>
+    <div class="container">
+        <header>
+            <h1>Order Confirmation</h1>
+            <p>Thank you for your order!</p>
+        </header>
+
+        <section class="confirmation-details">
+            <h2>Your Order Summary</h2>
+            <ul id="confirmation-list">
+                <!-- Order items will be populated here -->
+            </ul>
+            <p>Your order has been successfully processed.</p>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Udaan Airways Food Service. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Dummy order data for demonstration
+        const orderList = JSON.parse(localStorage.getItem('foodOrder')) || [];
+
+        function displayConfirmation() {
+            const confirmationListElement = document.getElementById('confirmation-list');
+            confirmationListElement.innerHTML = '';
+            orderList.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                confirmationListElement.appendChild(li);
+            });
+        }
+
+        // Call displayConfirmation on page load
+        document.addEventListener('DOMContentLoaded', displayConfirmation);
+    </script>
+</body>
+
+</html>
