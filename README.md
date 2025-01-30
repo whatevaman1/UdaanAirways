@@ -19,11 +19,11 @@ Udaan Airways is an airline booking platform designed to provide a seamless flig
 ## Installation
 1. Clone this repository:
    ```bash
-   git clone https://github.com/whatevaman1/UdaanAirways.git
+   git clone https://github.com/whatevaman1/udaanairways.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd UdaanAirways
+   cd udaanairways
    ```
 3. Open the `index.html` file in a browser to test the frontend.
 4. If using a local server for PHP, move the project to your server directory (e.g., `htdocs` for XAMPP).
