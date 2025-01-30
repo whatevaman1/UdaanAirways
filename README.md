@@ -46,7 +46,3 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ## Contact
 For queries or contributions, contact [amans11221@gmail.com] or visit the GitHub repository.
-
----
-This README provides essential details to help users and contributors get started with the project. Feel free to modify it as needed!
-
